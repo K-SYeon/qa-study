@@ -247,3 +247,10 @@ QA 효율을 높이고 사람이 수행하는 테스트의 부담을 줄일 수 
 
 QA는 단순히 오류를 찾는 것이 아니라,
 다양한 테스트 방법을 통해 제품의 품질을 확인하고 개선하는 역할을 한다.
+
+---
+
+## 참고
+
+- https://www.q-meet.com/customer-case/107
+- https://www.ibm.com/kr-ko/think/topics/regression-testing
