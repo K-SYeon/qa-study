@@ -34,3 +34,9 @@ Test Case는 테스트를 수행하기 위한 정보를 포함한다.
 Test Case는 Test Scenario에서 정의한 테스트 범위를 실제로 검증하기 위한 상세 항목이다.
 
 테스트를 진행할 때 동일한 기준으로 확인할 수 있도록 테스트 과정과 결과를 정리하는 것이 중요하다.
+
+---
+
+## 참고
+
+- https://en.wikipedia.org/wiki/Test_case_(software)
