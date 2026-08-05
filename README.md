@@ -12,9 +12,9 @@ QA 관련 개념과 테스트 방법을 공부하며 정리한 문서입니다.
 
 ## Documents
 
-- [QA](docs/01_qa.md)
-- [SDLC](docs/02_sdlc.md)
-- [STLC](docs/03_stlc.md)
-- [Testing Type](docs/04_testing-type.md)
-- [Test Scenario](docs/05_test-scenario.md)
-- [Test Case](docs/06_test-case.md)
+- [QA](docs/01_QA-Basic/QA.md)
+- [SDLC](docs/01_QA-Basic/SDLC.md)
+- [STLC](docs/01_QA-Basic/STLC.md)
+- [Testing Type](docs/02_TestCase/Testing-Type.md)
+- [Test Scenario](docs/02_TestCase/Test-Scenario.md)
+- [Test Case](docs/02_TestCase/Test-Case.md)
