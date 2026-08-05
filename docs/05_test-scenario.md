@@ -30,3 +30,9 @@
 
 Test Scenario는 테스트의 전체적인 방향을 정하고,
 Test Case는 해당 Scenario를 검증하기 위한 상세한 테스트 항목이라고 이해했다.
+
+---
+
+## 참고
+
+- https://softwaretestingreference.tistory.com/221
