@@ -10,6 +10,7 @@ QA 관련 개념과 테스트 방법을 공부하며 정리한 문서입니다.
 - Test Scenario
 - Test Case
 - Test Condition
+- Positive Case / Negative Case / Edge Case
 
 ## Documents
 
@@ -20,3 +21,4 @@ QA 관련 개념과 테스트 방법을 공부하며 정리한 문서입니다.
 - [Test Scenario](docs/02_TestCase/Test-Scenario.md)
 - [Test Case](docs/02_TestCase/Test-Case.md)
 - [Test Condition](docs/02_TestCase/Test-Condition.md)
+- [Positive Case / Negative Case / Edge Case](docs/02_TestCase/Positive-Negative-Edge-Case.md)
