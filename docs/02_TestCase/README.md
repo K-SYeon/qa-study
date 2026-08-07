@@ -9,6 +9,10 @@ Test Case를 작성하기 전에 필요한 개념을 학습하고 정리한 폴�
 - Test Case
 - Positive Test
 - Negative Test
+- Edge Test
+- 테스트 유형
+- Smoke Test
+- Regression Test
 - Test Case 작성 방법
 - Test Case 작성 시 고려 사항
 
@@ -25,7 +29,8 @@ Test Case를 작성하기 전에 필요한 개념을 학습하고 정리한 폴�
 | TestCondition.md | Test Condition 개념 정리 |
 | TestScenario.md | Test Scenario 개념 정리 |
 | TestCase.md | Test Case 개념 및 작성 방법 |
-| Positive-Negative-Test.md | Positive Test와 Negative Test 정리 |
+| Testing-Type.md | 테스트 유형과 Smoke Test, Regression Test 정리 |
+| Positive-Negative-Edge-Case.md | Positive Case와 Negative Case, Edge Case 정리 |
 
 ## 다음 단계
 
