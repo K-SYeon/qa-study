@@ -1,4 +1,4 @@
-# Signup Test Practice
+# 회원가입 테스트 실습
 
 ## 개요
 
