@@ -1,4 +1,4 @@
-# Login Test Practice
+# 로그인 테스트 실습
 
 ## 개요
 
