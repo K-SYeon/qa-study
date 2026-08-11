@@ -1,23 +1,21 @@
-# Signup Test Practice
+# Search Test Practice
 
 ## 개요
 
-네이버 회원가입 기능을 대상으로 Test Scenario와 Test Case를 작성한 실습입니다.
+네이버 검색 기능을 대상으로 Test Scenario와 Test Case를 작성한 실습입니다.
 
 ## 테스트 범위
 
-* 정상 회원가입
-* 아이디 중복 확인
-* 아이디 미입력
-* 비밀번호 미입력
-* 비밀번호 조건 미충족
-* 이름 미입력
-* 생년월일 미입력
-* 휴대전화번호 미입력
-* 휴대전화번호 일부 입력
-* 휴대전화 인증 미완료
+* 정상 검색
+* 검색어 미입력
+* 존재하지 않는 검색어
+* 특수문자 검색
+* 공백만 입력
+* 긴 검색어 입력
+* 영문 검색
+* 숫자 검색
 
 ## 파일
 
-* `Signup_TestPlan.md`
-* `Signup_TestCase.xlsx`
+* `Search_TestPlan.md`
+* `Search_TestCase.xlsx`
