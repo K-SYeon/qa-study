@@ -1,4 +1,4 @@
-# Logout Test Practice
+# 로그아웃 테스트 실습
 
 ## 개요
 
