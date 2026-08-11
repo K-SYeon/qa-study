@@ -1,4 +1,4 @@
-# Password Reset Test Practice
+# 비밀번호 찾기 테스트 실습
 
 ## 개요
 
