@@ -1,4 +1,4 @@
-# Search Test Practice
+# 검색 테스트 실습
 
 ## 개요
 
