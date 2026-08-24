@@ -32,4 +32,4 @@ QA 테스트 과정에서 결함(Bug)을 기록하고 관리하는 방법을 학
 
 ## 파일
 
-- Bug_Report.xlsx
+- Bug-Report.xlsx
