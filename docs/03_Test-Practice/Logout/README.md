@@ -12,5 +12,5 @@
 
 ## 파일
 
-* `Logout_TestPlan.md`
-* `Logout_TestCase.xlsx`
+* `Logout-TestPlan.md`
+* `Logout-TestCase.xlsx`
