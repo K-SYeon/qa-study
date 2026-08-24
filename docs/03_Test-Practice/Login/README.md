@@ -15,5 +15,5 @@
 
 ## 파일
 
-- Login_TestPlan.md
-- Login_TestCase.xlsx
+- Login-TestPlan.md
+- Login-TestCase.xlsx
