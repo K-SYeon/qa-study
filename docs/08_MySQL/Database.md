@@ -43,6 +43,7 @@ qa_practice
 
 ```sql
 USE qa_practice;
+```
 
 Database를 선택하지 않은 상태에서 Table을 조회하면 다음과 같은 오류가 발생할 수 있다.
 
