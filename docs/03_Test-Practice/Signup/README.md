@@ -19,5 +19,5 @@
 
 ## 파일
 
-- Signup_TestPlan.md
-- Signup_TestCase.xlsx
+- Signup-TestPlan.md
+- Signup-TestCase.xlsx
