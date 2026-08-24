@@ -32,11 +32,11 @@ SQL을 이용하여 다음 데이터베이스 작업을 학습하였습니다.
 ## 파일
 
 - SQL.md
-- SELECT.md
-- WHERE.md
-- ORDER_BY.md
-- GROUP_BY.md
-- JOIN.md
-- INSERT.md
-- UPDATE.md
-- DELETE.md
+- Select.md
+- Where.md
+- Order-By.md
+- Group-By.md
+- Join.md
+- Insert.md
+- Update.md
+- Delete.md
