@@ -18,5 +18,5 @@
 
 ## 파일
 
-* `PasswordReset_TestPlan.md`
-* `PasswordReset_TestCase.xlsx`
+* `PasswordReset-TestPlan.md`
+* `PasswordReset-TestCase.xlsx`
