@@ -17,5 +17,5 @@
 
 ## 파일
 
-* `Search_TestPlan.md`
-* `Search_TestCase.xlsx`
+* `Search-TestPlan.md`
+* `Search-TestCase.xlsx`
