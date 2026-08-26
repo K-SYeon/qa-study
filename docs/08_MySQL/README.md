@@ -85,20 +85,17 @@ WHERE email = 'test@test.com';
 - Database 미선택 오류 해결
 - Table 이름 오류 해결
 
-## 폴더 구조
+## 파일
 
-```text
-MySQL/
-├── README.md
-├── MySQL.md
-├── Install.md
-├── Database.md
-├── Create-Database.md
-├── Table.md
-├── Create-Table.md
-├── Insert.md
-├── Select.md
-├── Update.md
-├── Delete.md
-└── Order-By.md
-```
+- `README.md`
+- `MySQL.md`
+- `Install.md`
+- `Database.md`
+- `Create-Database.md`
+- `Table.md`
+- `Create-Table.md`
+- `Insert.md`
+- `Select.md`
+- `Update.md`
+- `Delete.md`
+- `Order-By.md`
