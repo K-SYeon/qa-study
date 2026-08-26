@@ -18,8 +18,8 @@ QA에서는 테스트 중 발견한 Bug를 Issue로 등록하고, 수정 및 재
 
 ## 학습 내용
 
-- JIRA의 정의와 기본 구조
-- JIRA 설치 및 기본 설정
+- JIRA
+- Install
 - Project
 - Issue
 - Issue Type
@@ -28,21 +28,17 @@ QA에서는 테스트 중 발견한 Bug를 Issue로 등록하고, 수정 및 재
 - Severity
 - Status
 - Workflow
-- QA에서의 JIRA 활용
 
-## 폴더 구조
+## 파일
 
-```text
-09_JIRA/
-├── README.md
-├── JIRA.md
-├── Install.md
-├── Project.md
-├── Issue.md
-├── Issue-Type.md
-├── Bug-Report.md
-├── Priority.md
-├── Severity.md
-├── Status.md
-└── Workflow.md
-```
+- `README.md`
+- `JIRA.md`
+- `Install.md`
+- `Project.md`
+- `Issue.md`
+- `Issue-Type.md`
+- `Bug-Report.md`
+- `Priority.md`
+- `Severity.md`
+- `Status.md`
+- `Workflow.md`
