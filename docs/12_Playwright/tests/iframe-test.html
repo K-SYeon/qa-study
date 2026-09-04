@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframe-test</title>
+</head>
+<body>
+    <input type="text" placeholder="검색어를 입력해 주세요."/>
+    <button id="search-btn">검색</button>
+    <p id="message"></p>
+</body>
+<script>
+    document.getElementById('search-btn').addEventListener('click', () => {
+        const keyword = document.querySelector('input').value;
+        
+        document.getElementById('message').textContent = `${keyword} 검색 완료`;
+    });
+</script>
+</html>

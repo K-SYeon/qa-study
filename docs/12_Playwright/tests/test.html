@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body>
+    <input type="text" placeholder="이름">
+    <input type="checkbox" id="agree">
+    <select id="country">
+        <option value="kr">대한민국</option>
+        <option value="us">미국</option>
+    </select>
+    <p id="message" style="display: none;">제출되었습니다.</p>
+    <button id="submit">제출</button>
+
+    <p id="delayed-message" style="display: none;">
+        2초 후 나타난 메시지
+    </p>
+    
+    <button id="delayed-button" disabled>2초 후 클릭 가능</button>
+    
+    <a href="https://www.google.com/" target="_blank">구글 새 탭</a>
+
+    <iframe src="iframe-test.html" id="iframe"></iframe>
+
+    <input type="file" id="file"/>
+
+    <a href="test.txt" download id="download">파일 다운로드</a>
+
+    <div id="drag-source" style="width: 100px; height: 100px; background: skyblue;">
+        드래그
+    </div>
+
+    <div id="drop-target" style="width: 200px; height: 150px; background: lightgray; margin-top: 20px;">
+        여기에 놓기
+    </div>
+</body>
+<script>
+    document.getElementById('submit').addEventListener('click', () => {
+        const name = document.querySelector('input[type="text"]').value;
+        
+        if(!name) {
+            alert('이름을 입력해 주세요.');
+            return;
+        }
+
+        document.getElementById('message').style.display = 'block';
+    });
+
+    // setTimeout(() => {
+    //     document.getElementById('delayed-message').style.display = 'block';
+    // }, 10000);
+
+    //  setTimeout(() => {
+    //     document.getElementById('delayed-button').disabled = false;
+    // }, 2000);
+</script>
+</html>
