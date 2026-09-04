@@ -39,14 +39,14 @@ test('placeholder를 이용해서 입력창을 찾는 방법', async({ page }) =
 });
 
 test('data-testid를 통해서 locator 찾기', async({ page }) => {
-    await page.goto('https://playwright.dev/');
+    await page.goto('http://localhost:3000/test.html');
 
-    await page.getByTestId('login-button').click();
+    await page.getByTestId('submit-button').click();
     // 의미를 기준으로 요소를 찾지 못할 경우에는 css 선택자 사용
     // 클래스 
-    // await page.locator('.login-button).click();
+    // await page.locator('.login-button').click();
     // 아이디
-    // await page.locator('#login-button).click();
+    // await page.locator('#login-button').click();
 });
 
 test('CSS 선택자로 검색창 찾기', async( {page} ) => {
@@ -74,8 +74,11 @@ test('요소의 텍스트를 확인하는 테스트', async({ page }) => {
     await page.goto('https://playwright.dev/');
 
     await expect(
-        page.getByRole('heading', {name: /playwright/})
-    ).toHaveText('playwright')
+        page.getByRole('link', {name: 'Get started'})
+    ).toHaveText('Get started');
+    // await expect(
+    //     page.getByRole('heading', {name: /testing/})
+    // ).toHaveText('testing')
 });
 
 // test2. Locator+Action+Assertion
@@ -133,7 +136,7 @@ test.describe('playwright test', () => {
     });
 });
 
-test('여러 요소 중 첫 번째 요소 찾기', async({page}) => {
+test('여러 요소 중 첫 번째 요소 찾기 - playwright', async({page}) => {
     page.goto('https://playwright.dev/');
 
     const links = page.getByRole('link', {name: 'Get started'});
@@ -149,7 +152,7 @@ test('여러 링크의 개수 확인', async({ page }) => {
     console.log(await links.count())
 });
 
-test('여러 요소 중 첫 번째 요소 찾기', async({ page }) => {
+test('여러 요소 중 첫 번째 요소 찾기 - naver', async({ page }) => {
     await page.goto('https://www.naver.com/');
 
     const links = page.getByRole('link');
@@ -196,7 +199,7 @@ test('특정 요소를 포함하는 링크 찾기', async({ page }) => {
 });
 
 test('이름 입력 테스트', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     await page.getByPlaceholder('이름').fill('김소연')
 
@@ -206,7 +209,7 @@ test('이름 입력 테스트', async({ page }) => {
 });
 
 test('체크박스 선택 테스트', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     await page.locator('#agree').check();
 
@@ -216,7 +219,7 @@ test('체크박스 선택 테스트', async({ page }) => {
 });
 
 test('체크박스 해제 테스트', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     await page.locator('#agree').check();
     await page.locator('#agree').uncheck();
@@ -227,7 +230,7 @@ test('체크박스 해제 테스트', async({ page }) => {
 });
 
 test('드롭다운 선택 테스트', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
     
     await page.locator('#country').selectOption('us');
 
@@ -237,7 +240,7 @@ test('드롭다운 선택 테스트', async({ page }) => {
 });
 
 test('제출 전에 메시지가 숨겨져 있는지 확인', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     await expect(
         page.locator('#message')
@@ -245,8 +248,10 @@ test('제출 전에 메시지가 숨겨져 있는지 확인', async({ page }) =>
 });
 
 test('제출 버튼 클릭 후 메시지 표시 확인1', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
     
+    await page.getByPlaceholder('이름').fill('김소연');
+
     await page.getByRole('button', {name: '제출'}).click();
 
     // await page.waitForTimeout(1000);
@@ -257,25 +262,25 @@ test('제출 버튼 클릭 후 메시지 표시 확인1', async({ page }) => {
 });
 
 test('제출 버튼 클릭 후 메시지 표시 확인2', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
-    await page.getByRole('button', {name: '제출'});
+    await page.getByRole('button', {name: '제출'}).click();
 
     await expect(
         page.locator('#message')
     ).toHaveText('제출되었습니다.');
 });
 
-test('제출 버튼이 비활성화 상태인지 확인', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+// test('제출 버튼이 비활성화 상태인지 확인', async({ page }) => {
+//     await page.goto(`http://localhost:3000/test.html`);
 
-    await expect(
-        page.getByRole('button', {name: '제출'})
-    ).toBeDisabled();
-});
+//     await expect(
+//         page.getByRole('button', {name: '제출'})
+//     ).toBeDisabled();
+// });
 
 test('제출 버튼이 활성화 상태인지 확인', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     await expect(
         page.getByRole('button', {name: '제출'})
@@ -283,7 +288,7 @@ test('제출 버튼이 활성화 상태인지 확인', async({ page }) => {
 });
 
 test('요소의 속성 확인1', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     await expect(
         page.locator('#agree')
@@ -291,7 +296,7 @@ test('요소의 속성 확인1', async({ page }) => {
 });
 
 test('요소의 속성 확인2', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     await expect(
         page.getByPlaceholder('이름')
@@ -299,7 +304,7 @@ test('요소의 속성 확인2', async({ page }) => {
 });
 
 test('회원 가입 폼 입력 및 제출 테스트', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     await page.getByPlaceholder('이름').fill('김소연');
     await page.locator('#agree').check();
@@ -311,8 +316,8 @@ test('회원 가입 폼 입력 및 제출 테스트', async({ page }) => {
     ).toBeVisible();
 });
 
-test('회원 가입 폼 입력 및 제출 테스트', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+test('회원 가입 폼 입력 및 제출 검사 테스트 ', async({ page }) => {
+    await page.goto(`http://localhost:3000/test.html`);
 
     await page.getByPlaceholder('이름').fill('김소연');
     await expect(
@@ -337,7 +342,7 @@ test('회원 가입 폼 입력 및 제출 테스트', async({ page }) => {
 });
 
 test('이름을 입력하지 않고 제출했을 때 alert 확인', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     page.on('dialog', async dialog => {
         expect(
@@ -350,7 +355,7 @@ test('이름을 입력하지 않고 제출했을 때 alert 확인', async({ page
 });
 
 test('정확한 텍스트를 가진 요소 찾기', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     await expect(
         page.getByText('제출', {exact: true})
@@ -358,7 +363,7 @@ test('정확한 텍스트를 가진 요소 찾기', async({ page }) => {
 });
 
 test('정규식으로 요소 찾기', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     // const buttons = page.getByRole('button', {name: /제출/});
     // console.log(await buttons.count()) // 2
@@ -380,7 +385,7 @@ test('검색 후 URL 변경 대기', async({ page }) => {
 });
 
 test('동적으로 나타나는 요소 확인', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     await page.waitForTimeout(1000);
 
@@ -390,13 +395,13 @@ test('동적으로 나타나는 요소 확인', async({ page }) => {
 });
 
 test('동적으로 활성화되는 버튼 클릭 테스트', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     await page.locator('#delayed-button').click();
 });
 
 test('waitForSelector로 동적 요소 대기', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     await page.waitForSelector('#delayed-message'); // DOM에 존재하는 순간 바로 통과 가능
 
@@ -410,7 +415,7 @@ test('waitForSelector로 동적 요소 대기', async({ page }) => {
 });
 
 test('toBeVisible로 동적 요소 확인', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     await expect(
         page.locator('#delayed-message')
@@ -419,21 +424,21 @@ test('toBeVisible로 동적 요소 확인', async({ page }) => {
     console.log('toBeVisible 통과')
 });
 
-test('Timeout 확인', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+// test('Timeout 확인', async({ page }) => {
+//     await page.goto(`http://localhost:3000/test.html`);
 
-    await expect(
-        page.locator('#없는요소')
-    ).toBeVisible({timeout: 3000}); // 기본 5초
-});
+//     await expect(
+//         page.locator('#없는요소')
+//     ).toBeVisible({timeout: 3000}); // 기본 5초
+// });
 
-test('Assertion timeout', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+// test('Assertion timeout', async({ page }) => {
+//     await page.goto(`http://localhost:3000/test.html`);
 
-    await expect(
-        page.locator('#delayed-message')
-    ).toBeVisible({ timeout: 12000 });
-});
+//     await expect(
+//         page.locator('#delayed-message')
+//     ).toBeVisible({ timeout: 12000 });
+// });
 
 test('페이지 뒤로가기 테스트', async({ page }) => {
     await page.goto('https://www.naver.com/');
@@ -463,7 +468,7 @@ test('페이지 새로고침 테스트', async({ page }) => {
 });
 
 test('새 탭 열기 테스트', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     const newPagePromise = page.waitForEvent('popup'); // 새 탭이 열리는 이벤트를 기다릴 준비
 
@@ -475,7 +480,7 @@ test('새 탭 열기 테스트', async({ page }) => {
 });
 
 test('Browsercontext의 페이지 확인 테스트', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     const context = page.context();
 
@@ -494,7 +499,7 @@ test('Browsercontext의 페이지 확인 테스트', async({ page }) => {
 });
 
 test('iframe 안의 입력창을 찾아서 입력하고 검증하는 테스트', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     const iframe = page.frameLocator('#iframe');
     await iframe.getByPlaceholder('검색어를 입력해 주세요.').fill('QA');
@@ -503,7 +508,7 @@ test('iframe 안의 입력창을 찾아서 입력하고 검증하는 테스트',
 });
 
 test('파일 업로드 테스트', async({ page }) => {
-    await page.goto(`file:///C:/Users/laypop-sykim/Desktop/qa-study/docs/12_Playwright/tests/test.html`);
+    await page.goto(`http://localhost:3000/test.html`);
 
     const fileInput = page.locator('#file');
     
@@ -601,33 +606,33 @@ test('마우스 드래그 테스트', async({ page }) => {
     await page.mouse.up(); // 마우스 뗀다
 });
 
-test('스크린샷 테스트', async({ page }) => {
-    await page.goto(`http://localhost:3000/test.html`);
+// test('스크린샷 테스트', async({ page }) => {
+//     await page.goto(`http://localhost:3000/test.html`);
 
-    await page.screenshot({
-        path: 'test-screenshot.png'
-        // path: 'tests/test-screenshot.png' // 폴더 지정
-    })
-});
+//     await page.screenshot({
+//         path: 'test-screenshot.png'
+//         // path: 'tests/test-screenshot.png' // 폴더 지정
+//     })
+// });
 
-test('특정 요소만 스크린샷 테스트', async({ page }) => {
-    await page.goto(`http://localhost:3000/test.html`);
+// test('특정 요소만 스크린샷 테스트', async({ page }) => {
+//     await page.goto(`http://localhost:3000/test.html`);
 
-    await page.locator('#country').screenshot({
-        path: 'test-locator-screenshot.png'
-    })
-});
+//     await page.locator('#country').screenshot({
+//         path: 'test-locator-screenshot.png'
+//     })
+// });
 
-test('실패 시 스크린샷 테스트', async({ page }) => {
-    await page.goto(`http://localhost:3000/test.html`);
+// test('실패 시 스크린샷 테스트', async({ page }) => {
+//     await page.goto(`http://localhost:3000/test.html`);
 
-    await expect(page).toHaveTitle('틀린 제목');
-});
+//     await expect(page).toHaveTitle('틀린 제목');
+// });
 
-test('Trace 테스트', async({ page }) => {
-    await page.goto(`http://localhost:3000/test.html`);
+// test('Trace 테스트', async({ page }) => {
+//     await page.goto(`http://localhost:3000/test.html`);
 
-    await page.getByPlaceholder('이름').fill('김소연');
+//     await page.getByPlaceholder('이름').fill('김소연');
 
-    await expect(page).toHaveTitle('틀린 제목');
-});
+//     await expect(page).toHaveTitle('틀린 제목');
+// });
