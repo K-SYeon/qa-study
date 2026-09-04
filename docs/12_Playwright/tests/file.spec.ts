@@ -12,7 +12,7 @@ test.describe('file 기능 테스트', () => {
     test('파일 업로드', async({ page }) => {
         const fileInput = page.locator('#file');
 
-        await fileInput.setInputFiles('test.txt');
+        await fileInput.setInputFiles('tests/test.txt');
     
         const file = await fileInput.inputValue();
 

@@ -512,7 +512,7 @@ test('파일 업로드 테스트', async({ page }) => {
 
     const fileInput = page.locator('#file');
     
-    await fileInput.setInputFiles('test.txt');
+    await fileInput.setInputFiles('tests/test.txt');
 
     // const file = await fileInput.inputFiles(); // inputFiles()는 locator에 사용할 수 없음 
     // expect(file).not.toBeNull();
