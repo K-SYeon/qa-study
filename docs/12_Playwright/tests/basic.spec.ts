@@ -137,7 +137,7 @@ test.describe('playwright test', () => {
 });
 
 test('여러 요소 중 첫 번째 요소 찾기 - playwright', async({page}) => {
-    page.goto('https://playwright.dev/');
+    await page.goto('https://playwright.dev/');
 
     const links = page.getByRole('link', {name: 'Get started'});
 
@@ -441,22 +441,22 @@ test('toBeVisible로 동적 요소 확인', async({ page }) => {
 // });
 
 test('페이지 뒤로가기 테스트', async({ page }) => {
-    await page.goto('https://www.naver.com/');
-    await page.goto('https://www.google.com/');
+    await page.goto('http://localhost:3000/test.html');
+    await page.goto('http://localhost:3000/iframe-test.html');
 
     await page.goBack();
 
-    await expect(page).toHaveURL(/naver\.com/);
+    await expect(page).toHaveURL(/test\.html/);
 });
 
 test('페이지 앞으로가기 테스트', async({ page }) => {
-    await page.goto('https://www.naver.com/');
-    await page.goto('https://www.google.com/');
+    await page.goto('http://localhost:3000/test.html');
+    await page.goto('http://localhost:3000/iframe-test.html');
 
     await page.goBack();
     await page.goForward();
 
-    await expect(page).toHaveURL(/google\.com/);
+    await expect(page).toHaveURL(/iframe-test\.html/);
 });
 
 test('페이지 새로고침 테스트', async({ page }) => {

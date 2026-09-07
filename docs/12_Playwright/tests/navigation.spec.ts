@@ -10,18 +10,18 @@ test.describe('페이지 이동 테스트', () => {
     });
 
     test('뒤로 가기 테스트', async({ page }) => {
-        await page.goto('https://www.naver.com/');
+        await page.goto('http://localhost:3000/iframe-test.html');
         await page.goBack();
 
-        await expect(page).toHaveURL(/localhost/);
+        await expect(page).toHaveURL(/test\.html/);
     });
 
     test('앞으로 가기 테스트', async({ page }) => {
-        await page.goto('https://www.naver.com/');
+        await page.goto('http://localhost:3000/iframe-test.html');
         await page.goBack();
         await page.goForward();
 
-        await expect(page).toHaveURL(/naver/);
+        await expect(page).toHaveURL(/iframe-test\.html/);
     });
 
     test('새로고침 테스트', async({ page }) => {
