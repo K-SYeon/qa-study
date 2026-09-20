@@ -1,0 +1,887 @@
+{
+  "info": {
+    "_postman_id": "5c1b65b3-cc3d-44eb-b23d-bd9f13b50cd4",
+    "name": "NEXT_forum-API-TEST",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57536593",
+    "_collection_link": "https://go.postman.co/collection/57536593-5c1b65b3-cc3d-44eb-b23d-bd9f13b50cd4?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Signup",
+          "item": [
+            {
+              "name": "정상 회원 가입",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\": \"postman_test01\",\r\n    \"pw\": \"testpw\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/auth/signup",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "signup"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "중복 아이디",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\": \"postman_test01\",\r\n    \"pw\": \"testpw\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/auth/signup",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "signup"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "아이디 또는 비밀번호 미입력",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\": \"postman_test02\",\r\n    \"pw\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/auth/signup",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "signup"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Login",
+          "item": [
+            {
+              "name": "정상 로그인",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "id",
+                      "value": "postman_test01",
+                      "type": "text",
+                      "uuid": "ca269a1e-31f3-4e28-9f09-78918fbff81b"
+                    },
+                    {
+                      "key": "password",
+                      "value": "testpw",
+                      "type": "text",
+                      "uuid": "b9d77fb6-1b33-4f9a-8eca-a9ecb73d08ba"
+                    },
+                    {
+                      "key": "csrfToken",
+                      "value": "da4fc9e769a82cc4049e17a1fbad50837bd2c690e4d99f53e0789ef836160efd",
+                      "type": "text",
+                      "uuid": "522f5af5-7d21-438b-83d0-30a56bbbb967"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/auth/callback/credentials",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "callback",
+                    "credentials"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "CSRF Token",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": []
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/auth/csrf?=",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "csrf"
+                  ],
+                  "query": [
+                    {
+                      "key": null,
+                      "value": "",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "존재하지 않는 아이디",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "id",
+                      "value": "postman_notexist",
+                      "type": "text",
+                      "uuid": "0ba2eff8-fec5-4fea-9bac-58159b1bd391"
+                    },
+                    {
+                      "key": "password",
+                      "value": "testpw",
+                      "type": "text",
+                      "uuid": "f45dcd0b-6522-42f3-8cc1-6042ed5a87fa"
+                    },
+                    {
+                      "key": "csrfToken",
+                      "value": "da4fc9e769a82cc4049e17a1fbad50837bd2c690e4d99f53e0789ef836160efd",
+                      "type": "text",
+                      "uuid": "60ac1293-2e88-47be-8254-4f469fcf3e2c"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/auth/callback/credentials",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "callback",
+                    "credentials"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "잘못된 비밀번호",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "id",
+                      "value": "postman_test01",
+                      "type": "text",
+                      "uuid": "c1942d61-e18c-41e0-bd21-14105e9d5014"
+                    },
+                    {
+                      "key": "password",
+                      "value": "wrongpw",
+                      "type": "text",
+                      "uuid": "33f2209c-ec42-438d-b831-fe741486b962"
+                    },
+                    {
+                      "key": "csrfToken",
+                      "value": "da4fc9e769a82cc4049e17a1fbad50837bd2c690e4d99f53e0789ef836160efd",
+                      "type": "text",
+                      "uuid": "a810ea37-fb0f-42c8-bc8f-64e71007cc05"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/auth/callback/credentials",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "callback",
+                    "credentials"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "아이디 또는 비밀번호 미입력",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "id",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "a1b7b1f5-88c7-45ba-b5a9-98834a10ec46"
+                    },
+                    {
+                      "key": "password",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "bfbd6f7a-8b67-4c42-8a57-f7d963674f31"
+                    },
+                    {
+                      "key": "csrfToken",
+                      "value": "da4fc9e769a82cc4049e17a1fbad50837bd2c690e4d99f53e0789ef836160efd",
+                      "type": "text",
+                      "uuid": "e7f9a6d3-1485-46aa-8671-4e65e7bfe42b"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/auth/callback/credentials",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "callback",
+                    "credentials"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Logout",
+          "item": [
+            {
+              "name": "정상 로그아웃",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "csrfToken",
+                      "value": "da4fc9e769a82cc4049e17a1fbad50837bd2c690e4d99f53e0789ef836160efd",
+                      "type": "text",
+                      "uuid": "680ae016-b7c8-4d3a-9d57-24201357eb66"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/auth/signout",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "signout"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Post",
+      "item": [
+        {
+          "name": "New",
+          "item": [
+            {
+              "name": "정상 글 작성",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"Postman API 테스트 글\",\r\n    \"content\": \"Postman을 이용한 게시글 작성 API 테스트입니다.\",\r\n    \"imageUrl\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/post/new",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "post",
+                    "new"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "제목 또는 내용 미입력",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"내용 미입력 테스트\",\r\n    \"content\": \"\",\r\n    \"imageUrl\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/post/new",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "post",
+                    "new"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "로그인 하지 않은 상태에서 글 작성",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"비로그인 글 작성 테스트\",\r\n    \"content\": \"로그인하지 않은 상태에서 작성 테스트\",\r\n    \"imageUrl\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/post/new",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "post",
+                    "new"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Edit",
+          "item": [
+            {
+              "name": "작성자 본인 글 수정",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"_id\": \"6aaeaf8cc084e747d447e000\",\r\n    \"title\": \"Postman API 수정 테스트\",\r\n    \"content\": \"게시글 수정 API가 정상적으로 동작하는지 테스트합니다.\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/post/edit",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "post",
+                    "edit"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "admin 로그인",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "id",
+                      "value": "admin",
+                      "type": "text",
+                      "uuid": "ca269a1e-31f3-4e28-9f09-78918fbff81b"
+                    },
+                    {
+                      "key": "password",
+                      "value": "admin",
+                      "type": "text",
+                      "uuid": "b9d77fb6-1b33-4f9a-8eca-a9ecb73d08ba"
+                    },
+                    {
+                      "key": "csrfToken",
+                      "value": "da4fc9e769a82cc4049e17a1fbad50837bd2c690e4d99f53e0789ef836160efd",
+                      "type": "text",
+                      "uuid": "522f5af5-7d21-438b-83d0-30a56bbbb967"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/auth/callback/credentials",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "callback",
+                    "credentials"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "관리자 다른 사용자 글 수정",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"_id\": \"6aaeaf8cc084e747d447e000\",\r\n    \"title\": \"관리자 수정 테스트\",\r\n    \"content\": \"관리자 계정으로 다른 사용자의 글을 수정하는 API 테스트입니다.\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/post/edit",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "post",
+                    "edit"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "일반 사용자 다른 사용자 글 수정",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"_id\": \"6aacdca2c084e747d447dff8\",\r\n    \"title\": \"일반 사용자 수정 테스트\",\r\n    \"content\": \"일반 사용자가 다른 사용자의 글을 수정하는 API 테스트입니다.\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/post/edit",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "post",
+                    "edit"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "수정 시 제목 또는 내용 미입력",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"_id\": \"6aaeaf8cc084e747d447e000\",\r\n    \"title\": \"수정 시 내용 미입력 테스트\",\r\n    \"content\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/post/edit",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "post",
+                    "edit"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Delete",
+          "item": [
+            {
+              "name": "작성자 본인 글 삭제",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/post/delete?_id=6aaeaf8cc084e747d447e000",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "post",
+                    "delete"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "6aaeaf8cc084e747d447e000"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "관리자 다른 사용자 글 삭제",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/post/delete?_id=6aaebbbcc084e747d447e001",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "post",
+                    "delete"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "6aaebbbcc084e747d447e001"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "yuyu 로그인",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "id",
+                      "value": "yuyu",
+                      "type": "text",
+                      "uuid": "ca269a1e-31f3-4e28-9f09-78918fbff81b"
+                    },
+                    {
+                      "key": "password",
+                      "value": "yuyu",
+                      "type": "text",
+                      "uuid": "b9d77fb6-1b33-4f9a-8eca-a9ecb73d08ba"
+                    },
+                    {
+                      "key": "csrfToken",
+                      "value": "da4fc9e769a82cc4049e17a1fbad50837bd2c690e4d99f53e0789ef836160efd",
+                      "type": "text",
+                      "uuid": "522f5af5-7d21-438b-83d0-30a56bbbb967"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/auth/callback/credentials",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "callback",
+                    "credentials"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "일반 사용자 다른 사용자 글 삭제",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/post/delete?_id=6aaebc79c084e747d447e002",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "post",
+                    "delete"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "6aaebc79c084e747d447e002"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Image",
+          "item": [
+            {
+              "name": "이미지 업로드 URL 생성",
+              "request": {
+                "method": "GET",
+                "header": []
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Comment",
+      "item": [
+        {
+          "name": "New",
+          "item": [
+            {
+              "name": "댓글 작성",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"_id\":\"6aaebc79c084e747d447e002\",\"comment\":\"Postman 댓글 작성 API 테스트입니다.\",\"like\":0}",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/comment/new",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "comment",
+                    "new"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "댓글 미입력",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"_id\":\"6aaebc79c084e747d447e002\",\"comment\":\"\",\"like\":0}",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/comment/new",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "comment",
+                    "new"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Like",
+          "item": [
+            {
+              "name": "댓글 좋아요",
+              "request": {
+                "method": "GET",
+                "header": []
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "List",
+          "item": [
+            {
+              "name": "댓글 목록 조회",
+              "request": {
+                "method": "GET",
+                "header": []
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
