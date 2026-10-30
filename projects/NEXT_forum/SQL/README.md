@@ -22,9 +22,5 @@ QA 업무에 필요한 SQL 기본 문법을 학습하고, 데이터 조회 및 �
 
 ## 파일
 - README.md
-- Basic.md
-- Practice.md
-
-## 문서 안내
-- `Basic.md`: SQL 기본 문법 및 주요 개념 정리
-- `Practice.md`: SQL 실습 쿼리 및 실행 결과 정리
+- Basic.md: SQL 기본 문법 및 주요 개념 정리
+- Practice.md: SQL 실습 쿼리 및 실행 결과 정리
