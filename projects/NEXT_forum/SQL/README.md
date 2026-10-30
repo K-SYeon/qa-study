@@ -21,12 +21,9 @@ QA 업무에 필요한 SQL 기본 문법을 학습하고, 데이터 조회 및 �
 - 윈도우 함수
 
 ## 폴더 구조
-```text
-SQL/
-├── README.md
-├── Basic.md
-└── Practice.md
-```
+- README.md
+- Basic.md
+- Practice.md
 
 ## 문서 안내
 - `Basic.md`: SQL 기본 문법 및 주요 개념 정리
