@@ -242,7 +242,7 @@ npx.cmd playwright test home.spec.js -g "게시글 테스트"
 
 또한 자동화 테스트로 확인하지 못한 항목은 검증 완료로 간주하지 않는다. 로그아웃 자동화 검증 등 미검증 항목은 별도로 기록한다.
 
-## 폴더 구조
+## 파일
 
 - `README.md` : Playwright 학습 내용 및 테스트 프로젝트 정리
 - `home.spec.js` : NEXT_forum 기능별 자동화 테스트 코드
