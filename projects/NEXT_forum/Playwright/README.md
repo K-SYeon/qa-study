@@ -244,12 +244,7 @@ npx.cmd playwright test home.spec.js -g "게시글 테스트"
 
 ## 폴더 구조
 
-```text
-qa-study/
-└── projects/
-    └── NEXT_forum/
-        ├── Test-Case/
-        ├── Bug-Report/
-        └── Playwright/
-            └── home.spec.js
-```
+- `README.md` : Playwright 학습 내용 및 테스트 프로젝트 정리
+- `home.spec.js` : NEXT_forum 기능별 자동화 테스트 코드
+- `package.json` : 프로젝트 의존성 및 실행 스크립트 관리
+- `package-lock.json` : 패키지 의존성 버전 정보 고정
