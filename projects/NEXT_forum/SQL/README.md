@@ -20,7 +20,7 @@ QA 업무에 필요한 SQL 기본 문법을 학습하고, 데이터 조회 및 �
 - 날짜 함수
 - 윈도우 함수
 
-## 폴더 구조
+## 파일
 - README.md
 - Basic.md
 - Practice.md
