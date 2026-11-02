@@ -4,7 +4,7 @@
 
 NEXT_forum 웹 애플리케이션을 대상으로 주요 기능과 사용자 흐름을 검증한 QA 프로젝트입니다.
 
-테스트 시나리오 및 테스트 케이스를 작성하고, 수동 테스트와 자동화 테스트를 수행했습니다. 또한 API 테스트를 진행하고, 발견한 결함을 문서화하여 JIRA로 관리했습니다.
+테스트 시나리오 및 테스트 케이스를 작성하고, 수동 테스트와 자동화 테스트를 수행했습니다. 또한 API 테스트와 데이터베이스 검증을 진행하고, 발견한 결함을 문서화하여 JIRA로 관리했습니다.
 
 ## 프로젝트 목표
 
@@ -12,6 +12,7 @@ NEXT_forum 웹 애플리케이션을 대상으로 주요 기능과 사용자 흐
 - 테스트 시나리오 및 테스트 케이스 작성
 - Playwright를 활용한 테스트 자동화
 - Postman을 활용한 API 테스트
+- MongoDB를 활용한 데이터 조회 및 검증
 - 테스트 결과를 바탕으로 QA 산출물 작성 및 관리
 - 결함 기록 및 JIRA를 활용한 이슈 관리
 
@@ -21,6 +22,7 @@ NEXT_forum 웹 애플리케이션을 대상으로 주요 기능과 사용자 흐
 - Browser : Google Chrome
 - Test Application : NEXT_forum
 - Test URL : http://localhost:3000
+- Database : MongoDB Atlas
 
 ## 테스트 범위
 
@@ -31,6 +33,7 @@ NEXT_forum 웹 애플리케이션을 대상으로 주요 기능과 사용자 흐
 - 관리자 기능
 - 화면 구성 및 UI
 - 페이지 이동 및 사용자 흐름
+- 회원 데이터 조회 및 중복 데이터 검증
 
 ## 테스트 수행 방법
 
@@ -41,7 +44,8 @@ NEXT_forum 웹 애플리케이션을 대상으로 주요 기능과 사용자 흐
 5. JIRA를 활용한 결함 등록 및 관리
 6. Postman을 활용한 API 테스트
 7. Playwright를 활용한 테스트 자동화
-8. 테스트 결과 정리 및 검토
+8. MongoDB Compass를 활용한 데이터 조회 및 검증
+9. 테스트 결과 정리 및 검토
 
 ## 테스트 결과
 
@@ -49,6 +53,8 @@ NEXT_forum 웹 애플리케이션을 대상으로 주요 기능과 사용자 흐
 - 주요 기능에 대한 테스트 수행 및 결과 확인
 - 테스트 과정에서 총 6건의 결함 발견 및 문서화
 - 발견한 결함을 Bug Report와 JIRA에 등록하여 관리
+- MongoDB에서 중복 아이디(`qa_duplicate01`)로 등록된 회원 데이터 3건 확인
+- MQL의 `find()` 및 `countDocuments()`를 활용한 데이터 조회 및 개수 확인
 
 ※ Passed는 자동화 테스트 코드가 정상적으로 실행되고 검증 절차를 통과했다는 의미이며, 애플리케이션에 결함이 없다는 의미는 아닙니다.
 
@@ -67,15 +73,24 @@ NEXT_forum 웹 애플리케이션을 대상으로 주요 기능과 사용자 흐
 
 - **Language & Query**
   - JavaScript
+  - MQL (MongoDB Query Language)
   - SQL (별도 MySQL 실습)
+
 - **Database**
-  - MongoDB (NEXT_forum)
+  - MongoDB Atlas (NEXT_forum)
   - MySQL (SQL 실습)
+
 - **Testing Tools**
   - Playwright
   - Postman
+
+- **Database Tools**
+  - MongoDB Compass
+  - MongoDB Shell (MONGOSH)
+
 - **Issue Tracking**
   - JIRA
+
 - **Documentation & Version Control**
   - Microsoft Excel
   - Markdown
@@ -134,3 +149,5 @@ NEXT_forum/
 테스트 시나리오와 테스트 케이스 작성부터 수동 테스트, API 테스트, 자동화 테스트까지 다양한 테스트 방법을 학습하고 적용했습니다.
 
 또한 실제 테스트 과정에서 발견한 결함을 재현 가능한 형태로 기록하고, Bug Report와 JIRA를 활용해 관리하면서 기대 결과와 실제 결과를 비교하고 결함을 구체적으로 문서화하는 과정의 중요성을 배웠습니다.
+
+MongoDB Compass와 MQL을 활용해 실제 데이터베이스의 회원 데이터를 조회하고, 중복 아이디로 등록된 데이터가 존재하는 것을 확인하면서 화면에서 발견한 결함을 데이터베이스 관점에서도 검증하는 경험을 쌓았습니다.
