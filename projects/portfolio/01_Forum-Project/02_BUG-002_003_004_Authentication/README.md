@@ -8,7 +8,7 @@
 |---|---|---|---|---|
 | BUG-002 | 일반 로그인 후 페이지 이동 오류 | High | Critical | Open |
 | BUG-003 | GitHub 로그인 후 페이지 이동 오류 | High | Critical | Open |
-| BUG-004 | 로그아웃 후 수정 페이지 접근 오류 | High | High | Open |
+| BUG-004 | 로그아웃 후 게시글 수정 페이지 이동 및 수정 오류 | High | High | Open |
 
 ## 2. 테스트 조건
 
